@@ -41,9 +41,7 @@ app.get('/login', routes.login);
 
 app.get('/autenticacio', routes.autenticarUsuari);
 
-app.get('/calendari', function (req, res) {
-  res.sendFile(__dirname + '/public/html/calendari.html');
-});
+app.get('/calendari', routes.calendari);
 
 app.listen(3000, function () {
   console.log('Servidor escoltant port http://localhost:3000');

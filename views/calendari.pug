@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title DAW2
+    link(rel='stylesheet', href='/css/calendari.css')
+    script(src='/js/calendari.js')
+  body
+    // MENU LATERAL ESQUERRE
+    #leftMenu
+      img#logo(src='/imatges/logo.png', draggable='false', width='100px')
+      hr
+      h3 Categories
+      .divCategories
+        img.categories(src='/imatges/musica.png', draggable='true', width='48px', height='50px')
+        label M&uacute;sica
+      .divCategories
+        img.categories(src='/imatges/idiomes.png', draggable='true', width='48px', height='50px')
+        label Idiomes
+      .divCategories
+        img.categories(src='/imatges/esports.png', draggable='true', width='48px', height='50px')
+        label Esports
+      .divCategories
+        img.categories(src='/imatges/encarrec.png', draggable='true', width='48px', height='50px')
+        label Enc&agrave;rrecs
+      hr
+      // <img id="creu" src="./imatges/redonda.jpg" draggable="true" width="100px">
+      #divLogOut
+        label#nom
+        br
+        br
+        br
+        br
+        form(action='/login')
+          input#butLogOut(type='submit', value='logout')
+    // CALENDARI
+    #divTaula
+      #titol
+        #mesAny Agost 2022
+        // <div id="escalable"></div>
+      canvas#tauler(width='1042', height='650')

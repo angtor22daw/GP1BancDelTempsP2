@@ -45,6 +45,10 @@ exports.registrarse = function (req, res) {
   res.render('registrarse');
 };
 
+exports.calendari = function (req, res) {
+  res.render('calendari');
+};
+
 exports.autenticarUsuari = function (req, res) {
   const baseURL = req.protocol + '://' + req.headers.host + '/';
   const reqUrl = new URL(req.url, baseURL);
