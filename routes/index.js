@@ -129,6 +129,26 @@ exports.verificarSiExisteixAdmin = function (req, res) {
     });
 };
 
+exports.retornaClasses = function (req, res) {
+  Classe.find()
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.retornaUsuaris = function (req, res) {
+  Usuari.find()
+    .then(result => {
+      res.send(result);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
 // routes = require('express').Router();
 
 // module.exports = routes;

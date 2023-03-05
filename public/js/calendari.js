@@ -50,7 +50,7 @@ function load() {
             return usuari;
         }
     }
-    var global=0;
+    var global = 0;
     var imatge1 = new imatge();
 
     var dies = [];
@@ -224,27 +224,27 @@ function load() {
                 console.log("alumne:" + classes[i].alumnes);
                 calculDia = (7 * parseInt(fila)) + parseInt(columna) + 1;
                 if (columna == xColumna && fila == yFila) {
-                if ((classes[i].alumnes != undefined) && (professor != usuari) && (classes[i].alumnes != usuari)) {
-                    // si la clase ja te un alumne
-                    let divGestio = document.createElement("div");
-                    divGestio.id = "divGestio";
-                    let labDia = document.createElement('label');
-                        labDia.innerHTML = "Dia "+calculDia;
-                
+                    if ((classes[i].alumnes != undefined) && (professor != usuari) && (classes[i].alumnes != usuari)) {
+                        // si la clase ja te un alumne
+                        let divGestio = document.createElement("div");
+                        divGestio.id = "divGestio";
+                        let labDia = document.createElement('label');
+                        labDia.innerHTML = "Dia " + calculDia;
+
                         let labProfessor = document.createElement('label');
-                        labProfessor.innerHTML = "Professor: "+professor;
+                        labProfessor.innerHTML = "Professor: " + professor;
 
                         let labCategoria = document.createElement('label');
-                        labCategoria.innerHTML = "Categoría: "+categoria;
+                        labCategoria.innerHTML = "Categoría: " + categoria;
 
                         let labDescripcio = document.createElement('label');
-                        labDescripcio.innerHTML = "Descripció: "+descripcio;
+                        labDescripcio.innerHTML = "Descripció: " + descripcio;
 
                         let labHora = document.createElement('label');
-                        labHora.innerHTML = "Hora: "+hora;
+                        labHora.innerHTML = "Hora: " + hora;
 
                         let labDuracio = document.createElement('label');
-                        labDuracio.innerHTML = "Duració: "+duracio;
+                        labDuracio.innerHTML = "Duració: " + duracio;
 
                         let br = document.createElement('br');
                         let br2 = document.createElement('br');
@@ -258,7 +258,7 @@ function load() {
                         labMissatge.innerHTML = "Ho sentim! Aquesta classe ja te alumne. Prova de triar una altra.";
                         labMissatge.style = "color: red";
                         let br9 = document.createElement('br');
-                        
+
                         let butCancelar = document.createElement('button');
                         butCancelar.type = 'button';
                         butCancelar.innerHTML = 'Cancel·la';
@@ -285,120 +285,30 @@ function load() {
                         divGestio.appendChild(br9);
                         divGestio.appendChild(butCancelar);
                         document.body.appendChild(divGestio);
-                    
-                }
-                else if ((classes[i].alumnes != undefined) && (classes[i].alumnes == usuari)) {
-                    // si la clase ja te un alumne
-                    let divGestio = document.createElement("div");
-                    divGestio.id = "divGestio";
-                    let labDia = document.createElement('label');
 
-                    labDia.innerHTML = "Dia "+calculDia;
-
-                    let labProfessor = document.createElement('label');
-                    labProfessor.innerHTML = "Professor: "+professor;
-
-                    let labCategoria = document.createElement('label');
-                    labCategoria.innerHTML = "Categoría: "+categoria;
-
-                    let labDescripcio = document.createElement('label');
-                    labDescripcio.innerHTML = "Descripció: "+descripcio;
-
-                    let labHora = document.createElement('label');
-                    labHora.innerHTML = "Hora: "+hora;
-
-                    let labDuracio = document.createElement('label');
-                    labDuracio.innerHTML = "Duració: "+duracio;
-
-                    let br = document.createElement('br');
-                    let br2 = document.createElement('br');
-                    let br3 = document.createElement('br');
-                    let br4 = document.createElement('br');
-                    let br5 = document.createElement('br');
-                    let br6 = document.createElement('br');
-                    let br7 = document.createElement('br');
-                    let br8 = document.createElement('br');
-                    let labMissatge = document.createElement('label');
-
-                    labMissatge.innerHTML = "Ja estàs apuntat a aquesta classe!";
-                    labMissatge.style = "color: green";
-                    let br9 = document.createElement('br');
-
-                    let butCancelar = document.createElement('button');
-                    butCancelar.type = 'button';
-                    butCancelar.innerHTML = 'Cancel·la';
-                    butCancelar.addEventListener('click', function () {
-                        document.getElementById('divGestio').remove();
-                    });
-
-                    divGestio.appendChild(br);
-                    divGestio.appendChild(labDia);
-                    divGestio.appendChild(br2);
-                    divGestio.appendChild(br8);
-                    divGestio.appendChild(labProfessor);
-                    divGestio.appendChild(br3);
-                    divGestio.appendChild(labCategoria);
-
-                    divGestio.appendChild(br4);
-                    divGestio.appendChild(labDescripcio);
-                    divGestio.appendChild(br5);
-                    divGestio.appendChild(labDuracio);
-                    divGestio.appendChild(br6);
-                    divGestio.appendChild(labHora);
-                    divGestio.appendChild(br7);
-                    divGestio.appendChild(labMissatge);
-                    divGestio.appendChild(br9);
-                    divGestio.appendChild(butCancelar);
-                    document.body.appendChild(divGestio);
-                }
-
-                else{
-                console.log(id);
-                if (columna == xColumna & fila == yFila) {
-                    // variable para calcular el dia
-                    
-                    // intentamos pasar una variable pero no nos va
-                    global = calculDia;
-
-                    console.log("dia: " + calculDia);
-                    console.log("hay clase");
-                    if (professor == usuari) {
-                        console.log("eres el profe");
-                        // CREAR FORMULARI PER ELIMINAR CLASE
-                        //____________________________________________________________________________
+                    }
+                    else if ((classes[i].alumnes != undefined) && (classes[i].alumnes == usuari)) {
+                        // si la clase ja te un alumne
                         let divGestio = document.createElement("div");
                         divGestio.id = "divGestio";
-                        let formEliminar = document.createElement('form');
-                        formEliminar.action = '/eliminarClase';
-
-                        if (document.getElementById('divGestio')) {
-                            document.getElementById('divGestio').remove();
-                        }
-                        // Parametre ocult
-                        let inClaseID = document.createElement('input');
-                        inClaseID.type = 'hidden';
-                        inClaseID.name = 'id';
-                        inClaseID.value = id;
-                        
-                        // Parametres
-                        
                         let labDia = document.createElement('label');
-                        labDia.innerHTML = "Dia "+calculDia;
-                
+
+                        labDia.innerHTML = "Dia " + calculDia;
+
                         let labProfessor = document.createElement('label');
-                        labProfessor.innerHTML = "Professor: "+professor;
+                        labProfessor.innerHTML = "Professor: " + professor;
 
                         let labCategoria = document.createElement('label');
-                        labCategoria.innerHTML = "Categoría: "+categoria;
+                        labCategoria.innerHTML = "Categoría: " + categoria;
 
                         let labDescripcio = document.createElement('label');
-                        labDescripcio.innerHTML = "Descripció: "+descripcio;
+                        labDescripcio.innerHTML = "Descripció: " + descripcio;
 
                         let labHora = document.createElement('label');
-                        labHora.innerHTML = "Hora: "+hora;
+                        labHora.innerHTML = "Hora: " + hora;
 
                         let labDuracio = document.createElement('label');
-                        labDuracio.innerHTML = "Duració: "+duracio;
+                        labDuracio.innerHTML = "Duració: " + duracio;
 
                         let br = document.createElement('br');
                         let br2 = document.createElement('br');
@@ -408,228 +318,325 @@ function load() {
                         let br6 = document.createElement('br');
                         let br7 = document.createElement('br');
                         let br8 = document.createElement('br');
+                        let labMissatge = document.createElement('label');
+
+                        labMissatge.innerHTML = "Ja estàs apuntat a aquesta classe!";
+                        labMissatge.style = "color: green";
                         let br9 = document.createElement('br');
-                        let br10 = document.createElement('br');
-                        let br11 = document.createElement('br');
-                        let br12 = document.createElement('br');
-                        let br13 = document.createElement('br');
-                        let br14 = document.createElement('br');
-                        let br15 = document.createElement('br');
-                        let br16 = document.createElement('br');
+
                         let butCancelar = document.createElement('button');
                         butCancelar.type = 'button';
                         butCancelar.innerHTML = 'Cancel·la';
                         butCancelar.addEventListener('click', function () {
                             document.getElementById('divGestio').remove();
                         });
-                
-                        let butEliminarClase = document.createElement('button');
-                        butEliminarClase.type = 'submit';
-                        butEliminarClase.innerHTML = 'Eliminar';
-                        
-                        //form modificar
-                        let formModificar = document.createElement('form');
-                        formModificar.action = '/modificarClase';
-
-                        // Parametre ocult
-                        let inClaseIDmod = document.createElement('input');
-                        inClaseIDmod.type = 'hidden';
-                        inClaseIDmod.name = 'id';
-                        inClaseIDmod.value = id;
-                        let inpdescripcio = document.createElement('input');
-                        inpdescripcio.type = 'text';
-                        inpdescripcio.name = 'descripcio';
-                        inpdescripcio.value = descripcio;
-                        let inphora = document.createElement('input');
-                        inphora.type = 'text';
-                        inphora.name = 'hora';
-                        inphora.value = hora;
-                        let inpduracio = document.createElement('input');
-                        inpduracio.type = 'text';
-                        inpduracio.name = 'duracio';
-                        inpduracio.value = duracio;
-
-                        let butModificarClase = document.createElement('button');
-                        butModificarClase.type = 'submit';
-                        butModificarClase.innerHTML = 'Modificar';
-                        
 
                         divGestio.appendChild(br);
-                        divGestio.appendChild(br13);
-                        divGestio.appendChild(formEliminar);
+                        divGestio.appendChild(labDia);
+                        divGestio.appendChild(br2);
+                        divGestio.appendChild(br8);
+                        divGestio.appendChild(labProfessor);
+                        divGestio.appendChild(br3);
+                        divGestio.appendChild(labCategoria);
 
-                        formEliminar.appendChild(inClaseID);
-                        formEliminar.appendChild(labDia);
-
-                        divGestio.appendChild(br14);
-                        formEliminar.appendChild(br2);
-                        formEliminar.appendChild(br8);
-                        formEliminar.appendChild(labProfessor);
-                        formEliminar.appendChild(br3);
-                        formEliminar.appendChild(labCategoria);
-                        formEliminar.appendChild(br4);
-                        formEliminar.appendChild(labDescripcio);
-                        formEliminar.appendChild(br5);
-                        formEliminar.appendChild(labDuracio);
-                        formEliminar.appendChild(br6);
-                        formEliminar.appendChild(labHora);
-                        formEliminar.appendChild(br7);
-                        formEliminar.appendChild(br15);
-                        formEliminar.appendChild(butCancelar);
-                        formEliminar.appendChild(butEliminarClase);
+                        divGestio.appendChild(br4);
+                        divGestio.appendChild(labDescripcio);
+                        divGestio.appendChild(br5);
+                        divGestio.appendChild(labDuracio);
+                        divGestio.appendChild(br6);
+                        divGestio.appendChild(labHora);
+                        divGestio.appendChild(br7);
+                        divGestio.appendChild(labMissatge);
+                        divGestio.appendChild(br9);
+                        divGestio.appendChild(butCancelar);
                         document.body.appendChild(divGestio);
-                        divGestio.appendChild(br);
-                        divGestio.appendChild(formModificar);
-                        formModificar.appendChild(inpdescripcio);
-                        formModificar.appendChild(br9);
-                        formModificar.appendChild(inphora);
-                        formModificar.appendChild(br10);
-                        formModificar.appendChild(inpduracio);
-                        formModificar.appendChild(br11);
-                        formModificar.appendChild(br16);
-                        formModificar.appendChild(butModificarClase);
-                        formModificar.appendChild(br12);
-                        formModificar.appendChild(inClaseIDmod);
-                        document.body.appendChild(divGestio);
+                    } else {
+                        console.log(id);
+                        if (columna == xColumna & fila == yFila) {
+                            // variable para calcular el dia
 
-                    
-                        //____________________________________________________________________________
-                        // return global;
-                    }
-                    else {
-                        // request usuaris
-                        let request = new XMLHttpRequest();
-                        request.open('GET', '/usuaris');
-                        request.responseType = 'json';
-                        request.send();
-                        request.onload = function () {
-                            let usuaris = request.response;
-                            for (let i = 0; i < usuaris.length; i++) {
-                                let usuariMongo = usuaris[i].nom;
-                                let tcoins = usuaris[i].tcoins;
-                                console.log(usuariMongo);
-                                console.log(usuari);
-                                if (usuariMongo == usuari) {
-                                    console.log("tienes " + tcoins + " tcoins");
-                                    //____________________________________________________________________________
-                                    let divGestio = document.createElement("div");
-                                    divGestio.id = "divGestio";
-                                    let formUnirse = document.createElement('form');
-                                    formUnirse.action = '/uneixClase';
+                            // intentamos pasar una variable pero no nos va
+                            global = calculDia;
 
-                                    if (document.getElementById('divGestio')) {
-                                        document.getElementById('divGestio').remove();
+                            console.log("dia: " + calculDia);
+                            console.log("hay clase");
+                            if (professor == usuari) {
+                                console.log("eres el profe");
+                                // CREAR FORMULARI PER ELIMINAR CLASE
+                                //____________________________________________________________________________
+                                let divGestio = document.createElement("div");
+                                divGestio.id = "divGestio";
+                                let formEliminar = document.createElement('form');
+                                formEliminar.action = '/eliminarClase';
+
+                                if (document.getElementById('divGestio')) {
+                                    document.getElementById('divGestio').remove();
+                                }
+                                // Parametre ocult
+                                let inClaseID = document.createElement('input');
+                                inClaseID.type = 'hidden';
+                                inClaseID.name = 'id';
+                                inClaseID.value = id;
+
+                                // Parametres
+
+                                let labDia = document.createElement('label');
+                                labDia.innerHTML = "Dia " + calculDia;
+
+                                let labProfessor = document.createElement('label');
+                                labProfessor.innerHTML = "Professor: " + professor;
+
+                                let labCategoria = document.createElement('label');
+                                labCategoria.innerHTML = "Categoría: " + categoria;
+
+                                let labDescripcio = document.createElement('label');
+                                labDescripcio.innerHTML = "Descripció: " + descripcio;
+
+                                let labHora = document.createElement('label');
+                                labHora.innerHTML = "Hora: " + hora;
+
+                                let labDuracio = document.createElement('label');
+                                labDuracio.innerHTML = "Duració: " + duracio;
+
+                                let br = document.createElement('br');
+                                let br2 = document.createElement('br');
+                                let br3 = document.createElement('br');
+                                let br4 = document.createElement('br');
+                                let br5 = document.createElement('br');
+                                let br6 = document.createElement('br');
+                                let br7 = document.createElement('br');
+                                let br8 = document.createElement('br');
+                                let br9 = document.createElement('br');
+                                let br10 = document.createElement('br');
+                                let br11 = document.createElement('br');
+                                let br12 = document.createElement('br');
+                                let br13 = document.createElement('br');
+                                let br14 = document.createElement('br');
+                                let br15 = document.createElement('br');
+                                let br16 = document.createElement('br');
+                                let butCancelar = document.createElement('button');
+                                butCancelar.type = 'button';
+                                butCancelar.innerHTML = 'Cancel·la';
+                                butCancelar.addEventListener('click', function () {
+                                    document.getElementById('divGestio').remove();
+                                });
+
+                                let butEliminarClase = document.createElement('button');
+                                butEliminarClase.type = 'submit';
+                                butEliminarClase.innerHTML = 'Eliminar';
+
+                                /**
+                                 * 
+                                 * FORMULARIO PARA MODIFICAR CLASE
+                                 * 
+                                 */
+                                let formModificar = document.createElement('form');
+                                formModificar.action = '/modificarClase';
+
+                                // Parametre ocult
+                                let inClaseIDmod = document.createElement('input');
+                                inClaseIDmod.type = 'hidden';
+                                inClaseIDmod.name = 'id';
+                                inClaseIDmod.value = id;
+                                let inpdescripcio = document.createElement('input');
+                                inpdescripcio.type = 'text';
+                                inpdescripcio.name = 'descripcio';
+                                inpdescripcio.value = descripcio;
+                                let inphora = document.createElement('input');
+                                inphora.type = 'text';
+                                inphora.name = 'hora';
+                                inphora.value = hora;
+                                let inpduracio = document.createElement('input');
+                                inpduracio.type = 'text';
+                                inpduracio.name = 'duracio';
+                                inpduracio.value = duracio;
+
+                                let butModificarClase = document.createElement('button');
+                                butModificarClase.type = 'submit';
+                                butModificarClase.innerHTML = 'Modificar';
+
+
+                                divGestio.appendChild(br);
+                                divGestio.appendChild(br13);
+                                divGestio.appendChild(formEliminar);
+
+                                formEliminar.appendChild(inClaseID);
+                                formEliminar.appendChild(labDia);
+
+                                divGestio.appendChild(br14);
+                                formEliminar.appendChild(br2);
+                                formEliminar.appendChild(br8);
+                                formEliminar.appendChild(labProfessor);
+                                formEliminar.appendChild(br3);
+                                formEliminar.appendChild(labCategoria);
+                                formEliminar.appendChild(br4);
+                                formEliminar.appendChild(labDescripcio);
+                                formEliminar.appendChild(br5);
+                                formEliminar.appendChild(labDuracio);
+                                formEliminar.appendChild(br6);
+                                formEliminar.appendChild(labHora);
+                                formEliminar.appendChild(br7);
+                                formEliminar.appendChild(br15);
+                                formEliminar.appendChild(butCancelar);
+                                formEliminar.appendChild(butEliminarClase);
+                                document.body.appendChild(divGestio);
+                                divGestio.appendChild(br);
+                                divGestio.appendChild(formModificar);
+                                formModificar.appendChild(inpdescripcio);
+                                formModificar.appendChild(br9);
+                                formModificar.appendChild(inphora);
+                                formModificar.appendChild(br10);
+                                formModificar.appendChild(inpduracio);
+                                formModificar.appendChild(br11);
+                                formModificar.appendChild(br16);
+                                formModificar.appendChild(butModificarClase);
+                                formModificar.appendChild(br12);
+                                formModificar.appendChild(inClaseIDmod);
+                                document.body.appendChild(divGestio);
+
+
+                                //____________________________________________________________________________
+                                // return global;
+                            }
+                            else {
+                                // request usuaris
+                                let request = new XMLHttpRequest();
+                                request.open('GET', '/usuaris');
+                                request.responseType = 'json';
+                                request.send();
+                                request.onload = function () {
+                                    let usuaris = request.response;
+                                    for (let i = 0; i < usuaris.length; i++) {
+                                        let usuariMongo = usuaris[i].nom;
+                                        let tcoins = usuaris[i].tcoins;
+                                        console.log(usuariMongo);
+                                        console.log(usuari);
+                                        if (usuariMongo == usuari) {
+                                            console.log("tienes " + tcoins + " tcoins");
+                                            //____________________________________________________________________________
+                                            let divGestio = document.createElement("div");
+                                            divGestio.id = "divGestio";
+                                            /**
+                                             * 
+                                             * FORMULARIO PARA UNIRSE A UNA CLASE
+                                             * 
+                                             */
+                                            let formUnirse = document.createElement('form');
+                                            formUnirse.action = '/uneixClase';
+
+                                            if (document.getElementById('divGestio')) {
+                                                document.getElementById('divGestio').remove();
+                                            }
+                                            // Parametre ocult
+                                            let inClaseID = document.createElement('input');
+                                            inClaseID.type = 'hidden';
+                                            inClaseID.name = 'id';
+                                            inClaseID.value = id;
+                                            let inuser = document.createElement('input');
+                                            inuser.type = 'hidden';
+                                            inuser.name = 'nom';
+                                            // let alumne = localStorage.getItem('nom')
+                                            inuser.value = usuari;
+                                            let incoins = document.createElement('input');
+                                            incoins.type = 'hidden';
+                                            incoins.name = 'tcoins';
+                                            incoins.value = tcoins;
+                                            //temporal
+
+                                            // Parametres
+
+                                            let labDia = document.createElement('label');
+                                            labDia.innerHTML = "<b><u>Dia " + calculDia + "</u></b>";
+
+                                            let labProfessor = document.createElement('label');
+                                            labProfessor.innerHTML = "<b>Professor: </b>" + professor;
+
+                                            let labCategoria = document.createElement('label');
+                                            labCategoria.innerHTML = "<b>Categoría: </b>" + categoria;
+
+                                            let labDescripcio = document.createElement('label');
+                                            labDescripcio.innerHTML = "<b>Descripció: </b>" + descripcio;
+
+                                            let labHora = document.createElement('label');
+                                            labHora.innerHTML = "<b>Hora: </b>" + hora;
+
+                                            let labDuracio = document.createElement('label');
+                                            labDuracio.innerHTML = "<b>Duració: </b>" + duracio;
+
+                                            let labMissatge = document.createElement('label');
+                                            labMissatge.innerHTML = "(Unirse a la classe consumirà un tcoin)";
+                                            labMissatge.style = "color: red";
+
+                                            let labTcoins = document.createElement('label');
+                                            labTcoins.innerHTML = "Tcoins: " + tcoins;
+
+                                            let br = document.createElement('br');
+                                            let br2 = document.createElement('br');
+                                            let br3 = document.createElement('br');
+                                            let br4 = document.createElement('br');
+                                            let br5 = document.createElement('br');
+                                            let br6 = document.createElement('br');
+                                            let br7 = document.createElement('br');
+                                            let br8 = document.createElement('br');
+                                            let br9 = document.createElement('br');
+                                            let br10 = document.createElement('br');
+                                            let br11 = document.createElement('br');
+
+                                            let butCancelar = document.createElement('button');
+                                            butCancelar.type = 'button';
+                                            butCancelar.innerHTML = 'Cancel·la';
+                                            butCancelar.addEventListener('click', function () {
+                                                document.getElementById('divGestio').remove();
+                                            });
+
+                                            let butUnirseClase = document.createElement('button');
+                                            butUnirseClase.type = 'submit';
+                                            butUnirseClase.innerHTML = 'Unirse a la clase';
+
+                                            divGestio.appendChild(br);
+                                            divGestio.appendChild(formUnirse);
+
+                                            formUnirse.appendChild(inClaseID);
+                                            formUnirse.appendChild(inuser);
+                                            formUnirse.appendChild(incoins);
+                                            formUnirse.appendChild(labDia);
+                                            formUnirse.appendChild(br2);
+                                            formUnirse.appendChild(br8);
+                                            formUnirse.appendChild(labProfessor);
+                                            formUnirse.appendChild(br3);
+                                            formUnirse.appendChild(labCategoria);
+                                            formUnirse.appendChild(br4);
+                                            formUnirse.appendChild(labDescripcio);
+                                            formUnirse.appendChild(br5);
+                                            formUnirse.appendChild(labDuracio);
+                                            formUnirse.appendChild(br6);
+                                            formUnirse.appendChild(labHora);
+                                            formUnirse.appendChild(br7);
+                                            formUnirse.appendChild(br9);
+                                            formUnirse.appendChild(labMissatge);
+                                            formUnirse.appendChild(br10);
+                                            formUnirse.appendChild(labTcoins);
+                                            formUnirse.appendChild(br11);
+                                            formUnirse.appendChild(butCancelar);
+                                            formUnirse.appendChild(butUnirseClase);
+                                            document.body.appendChild(divGestio);
+
+                                            //____________________________________________________________________________
+                                        }
+
                                     }
-                                    // Parametre ocult
-                                    let inClaseID = document.createElement('input');
-                                    inClaseID.type = 'hidden';
-                                    inClaseID.name = 'id';
-                                    inClaseID.value = id;
-                                    let inuser = document.createElement('input');
-                                    inuser.type = 'hidden';
-                                    inuser.name = 'nom';
-                                    // let alumne = localStorage.getItem('nom')
-                                    inuser.value = usuari;
-                                    let incoins = document.createElement('input');
-                                    incoins.type = 'hidden';
-                                    incoins.name = 'tcoins';
-                                    incoins.value = tcoins;
-                                    //temporal
 
-                                    // Parametres
-
-                                    let labDia = document.createElement('label');
-                                    labDia.innerHTML = "<b><u>Dia " + calculDia + "</u></b>";
-
-                                    let labProfessor = document.createElement('label');
-                                    labProfessor.innerHTML = "<b>Professor: </b>" + professor;
-
-                                    let labCategoria = document.createElement('label');
-                                    labCategoria.innerHTML = "<b>Categoría: </b>" + categoria;
-
-                                    let labDescripcio = document.createElement('label');
-                                    labDescripcio.innerHTML = "<b>Descripció: </b>" + descripcio;
-
-                                    let labHora = document.createElement('label');
-                                    labHora.innerHTML = "<b>Hora: </b>" + hora;
-
-                                    let labDuracio = document.createElement('label');
-                                    labDuracio.innerHTML = "<b>Duració: </b>" + duracio;
-
-                                    let labMissatge = document.createElement('label');
-                                    labMissatge.innerHTML = "(Unirse a la classe consumirà un tcoin)";
-                                    labMissatge.style = "color: red";
-
-                                    let labTcoins = document.createElement('label');
-                                    labTcoins.innerHTML = "Tcoins: " + tcoins;
-
-                                    let br = document.createElement('br');
-                                    let br2 = document.createElement('br');
-                                    let br3 = document.createElement('br');
-                                    let br4 = document.createElement('br');
-                                    let br5 = document.createElement('br');
-                                    let br6 = document.createElement('br');
-                                    let br7 = document.createElement('br');
-                                    let br8 = document.createElement('br');
-                                    let br9 = document.createElement('br');
-                                    let br10 = document.createElement('br');
-                                    let br11 = document.createElement('br');
-
-                                    let butCancelar = document.createElement('button');
-                                    butCancelar.type = 'button';
-                                    butCancelar.innerHTML = 'Cancel·la';
-                                    butCancelar.addEventListener('click', function () {
-                                        document.getElementById('divGestio').remove();
-                                    });
-
-                                    let butUnirseClase = document.createElement('button');
-                                    butUnirseClase.type = 'submit';
-                                    butUnirseClase.innerHTML = 'Unirse a la clase';
-
-                                    divGestio.appendChild(br);
-                                    divGestio.appendChild(formUnirse);
-
-                                    formUnirse.appendChild(inClaseID);
-                                    formUnirse.appendChild(inuser);
-                                    formUnirse.appendChild(incoins);
-                                    formUnirse.appendChild(labDia);
-                                    formUnirse.appendChild(br2);
-                                    formUnirse.appendChild(br8);
-                                    formUnirse.appendChild(labProfessor);
-                                    formUnirse.appendChild(br3);
-                                    formUnirse.appendChild(labCategoria);
-                                    formUnirse.appendChild(br4);
-                                    formUnirse.appendChild(labDescripcio);
-                                    formUnirse.appendChild(br5);
-                                    formUnirse.appendChild(labDuracio);
-                                    formUnirse.appendChild(br6);
-                                    formUnirse.appendChild(labHora);
-                                    formUnirse.appendChild(br7);
-                                    formUnirse.appendChild(br9);
-                                    formUnirse.appendChild(labMissatge);
-                                    formUnirse.appendChild(br10);
-                                    formUnirse.appendChild(labTcoins);
-                                    formUnirse.appendChild(br11);
-                                    formUnirse.appendChild(butCancelar);
-                                    formUnirse.appendChild(butUnirseClase);
-                                    document.body.appendChild(divGestio);
-
-                                    //____________________________________________________________________________
                                 }
 
                             }
 
                         }
 
+                        else if (i == classes.length - 1) {
+                            console.log("no hay clase");
+                        }
                     }
-                    
                 }
-                
-                else if (i == classes.length - 1) {
-                    console.log("no hay clase");
-                }
-            }
-            }
             }
         }
     }
@@ -688,7 +695,13 @@ function load() {
             for (var a = 0; a < dies.length; a++) {
 
                 dia = dies[a];
-                // CREAR DIV + FORMULARIO PARA CREAR CLASES
+
+                /**
+                 * 
+                 * FORMULARIO PARA CREAR CLASE
+                 * 
+                 */
+
                 let divForm = document.createElement('div');
                 divForm.id = 'divForm';
 
@@ -733,13 +746,13 @@ function load() {
                 inSrc.name = 'src';
                 inSrc.value = imatge1.getFigura;
                 let categorialabel;
-                if (imatge1.getFigura == 'http://localhost:8888/imatges/encarrec.png') {
+                if (imatge1.getFigura == 'http://localhost:3000/imatges/encarrec.png') {
                     categorialabel = "Encàrrec";
-                } else if (imatge1.getFigura == 'http://localhost:8888/imatges/esports.png') {
+                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/esports.png') {
                     categorialabel = "Esports";
-                } else if (imatge1.getFigura == 'http://localhost:8888/imatges/idiomes.png') {
+                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/idiomes.png') {
                     categorialabel = "Idiomes";
-                } else if(imatge1.getFigura == 'http://localhost:8888/imatges/musica.png') {
+                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/musica.png') {
                     categorialabel = "Música";
                 }
                 let inCategoria = document.createElement('input');
@@ -809,9 +822,7 @@ function load() {
     }
     // PARANORMAL ACIVITY
 
-    //funcio dibuixa classes mongo
     function dibuixaClassesMongo() {
-        // get mongo collection
         console.log("usuari: " + usuari);
         let request = new XMLHttpRequest();
         request.open('GET', '/classes');
@@ -829,7 +840,6 @@ function load() {
             }
         }
     }
-    //funcion saber dia
 
 }
 window.addEventListener("load", load, false);

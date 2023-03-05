@@ -43,6 +43,10 @@ app.get('/autenticacio', routes.autenticarUsuari);
 
 app.get('/calendari', routes.calendari);
 
+app.get('/classes', routes.retornaClasses);
+
+app.get('/usuaris',routes.retornaUsuaris);
+
 app.listen(3000, function () {
   console.log('Servidor escoltant port http://localhost:3000');
 });
