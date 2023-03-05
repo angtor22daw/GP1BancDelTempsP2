@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+
+
+<head>
+    <title>DAW2</title>
+    <link rel="stylesheet" href="../css/calendari.css">
+    <script src="../js/calendari.js"></script>
+</head>
+
+<body>
+    <!-- MENU LATERAL ESQUERRE -->
+    <div id="leftMenu">
+        <img id="logo" src="/imatges/logo.png" draggable="false" width="100px">
+        <hr>
+       
+        <h3>Categories</h3>
+        <div class="divCategories">
+            <img class="categories" src="/imatges/musica.png" draggable="true" width="48px" height="50px">
+            <label>Música</label>
+        </div>
+        <div class="divCategories">
+            <img class="categories" src="/imatges/idiomes.png" draggable="true" width="48px" height="50px">
+            <label>Idiomes</label>
+        </div>
+        <div class="divCategories">
+            <img class="categories" src="/imatges/esports.png" draggable="true" width="48px" height="50px">
+            <label>Esports</label>
+        </div>
+        <div class="divCategories">
+            <img class="categories" src="/imatges/encarrec.png" draggable="true" width="48px" height="50px">
+            <label>Encàrrecs</label>
+        </div>
+
+        <hr>
+        <!-- <img id="creu" src="./imatges/redonda.jpg" draggable="true" width="100px"> -->
+        <div id="divLogOut">
+            <label id="nom"></label><br><br><br><br>
+            <form action="/login">
+                <input type="submit" id="butLogOut"value="logout">
+            </form>
+        </div> 
+    </div>
+    <!-- CALENDARI -->
+    <div id="divTaula">
+        <div id="titol">
+            <div id="mesAny">Agost 2022</div>
+            <!-- <div id="escalable"></div> -->
+        </div>
+        <canvas id="tauler" width="1042" height="650"></canvas>
+    </div>
+
+</body>
+
+</html>

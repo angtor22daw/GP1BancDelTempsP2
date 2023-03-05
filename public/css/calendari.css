@@ -1,0 +1,144 @@
+body{
+  background-color: #bdfa9c;
+}
+#leftMenu {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 20.2%;
+  height: 100%;
+  z-index: 1;
+  /* añadir borde derecho de color negro */
+  border-right: 1px solid rgb(116, 101, 101);
+  background-color: #adc155;
+}
+#butLogOut{
+  display: block;
+  background-color: lightgray;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+#logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 50%;
+}
+h3{
+  margin-left: 10%;
+  margin-top: 5%;
+  /* underline */
+  text-decoration: underline;
+}
+.divCategories{
+  display: flex;
+  align-items: center;
+  margin-top: 3%;
+}
+.divCategories label{
+  margin-left: 5%;
+}
+.categories{
+  position: relative;
+  margin-left: 10%;
+}
+
+hr{
+  margin-bottom: 10%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#divLogOut{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  
+  margin-bottom: 3%;
+  margin-left:5%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 50px;
+}
+
+#divTaula{
+  position: absolute;
+  top: 0;
+  margin: 0;
+  margin-left: 19.68%;
+  width: 79%;
+}
+
+#titol{
+  top: 0;
+  height: 50px;
+  width: 100%;
+  /* display: inline-block; */
+  background-color: #adc155;
+}
+#mesAny{
+  top: 0;
+  left: 0;
+  width: 1042px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #adc155;
+}
+/* #escalable{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+} */
+canvas {
+  z-index: 2;
+}
+#divForm{
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  width: 500px;
+  height: 400px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: center;
+  background-color: white;
+  z-index: 10;
+
+}
+#divGestio{
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  width: 500px;
+  height: 400px;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: center;
+  background-color: white;
+  z-index: 10;
+}
