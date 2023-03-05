@@ -36,6 +36,15 @@ const schemaUsuaris = new Schema({
 const Usuari = mongoose.model('usuaris', schemaUsuaris);
 const Classe = mongoose.model('classes', schemaClasses);
 
+
+exports.login = function (req, res) {
+  res.render('login');
+};
+
+exports.registrarse = function (req, res) {
+  res.render('registrarse');
+};
+
 exports.autenticarUsuari = function (req, res) {
   const baseURL = req.protocol + '://' + req.headers.host + '/';
   const reqUrl = new URL(req.url, baseURL);

@@ -31,19 +31,13 @@ app.get('/salutacio', function (req, res) {
 
 routes.verificarSiExisteixAdmin();
 
-app.get('/', function (req, res) {
-  res.redirect('/login');
-});
+app.get('/', routes.login);
 
-app.get('/registrarse', function (req, res) {
-  res.sendFile(__dirname + '/public/html/registrarse.html');
-});
+app.get('/registrarse', routes.registrarse);
 
 app.get('/desa', routes.desarUsuari);
 
-app.get('/login', function (req, res) {
-  res.sendFile(__dirname + '/public/html/login.html');
-  });
+app.get('/login', routes.login);
 
 app.get('/autenticacio', routes.autenticarUsuari);
 
@@ -52,7 +46,7 @@ app.get('/calendari', function (req, res) {
 });
 
 app.listen(3000, function () {
-  console.log('Servidor escoltant port 3000');
+  console.log('Servidor escoltant port http://localhost:3000');
 });
 
 // catch 404 and forward to error handler

@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/css/login.css')
+    title Login Banc del Temps
+  body
+    .encabezado
+      img(src='./imatges/logo.png', alt='logo', width='100', height='100')
+      h1.titol Banc del Temps
+    h1 Inici Sessi&oacute;
+    form#myForm(action='/autenticacio')
+      label Usuari:
+      input(type='text', name='nom', required='')
+      label(for='pass') Contrasenya:
+      input(type='password', name='password', required='')
+      button#submitBtn(type='button', onclick='formSubmit()') Iniciar sessi&oacute;
+      a(href='registrarse') Registrarse
+    script(src='/js/login.js')
