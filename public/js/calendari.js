@@ -367,7 +367,7 @@ function load() {
                                 let divGestio = document.createElement("div");
                                 divGestio.id = "divGestio";
                                 let formEliminar = document.createElement('form');
-                                formEliminar.action = '/eliminarClase';
+                                formEliminar.action = '/eliminarClasse';
 
                                 if (document.getElementById('divGestio')) {
                                     document.getElementById('divGestio').remove();
@@ -431,7 +431,7 @@ function load() {
                                  * 
                                  */
                                 let formModificar = document.createElement('form');
-                                formModificar.action = '/modificarClase';
+                                formModificar.action = '/modificarClasse';
 
                                 // Parametre ocult
                                 let inClaseIDmod = document.createElement('input');
@@ -522,7 +522,7 @@ function load() {
                                              * 
                                              */
                                             let formUnirse = document.createElement('form');
-                                            formUnirse.action = '/uneixClase';
+                                            formUnirse.action = '/uneixClasse';
 
                                             if (document.getElementById('divGestio')) {
                                                 document.getElementById('divGestio').remove();
@@ -711,7 +711,7 @@ function load() {
 
                 // Creamos el formulario
                 let form = document.createElement('form');
-                form.action = '/crearClase';
+                form.action = '/crearClasse';
 
                 // Mostramos el dia de la clase
                 let label = document.createElement('label');
@@ -722,7 +722,7 @@ function load() {
                 let usuari = localStorage.getItem('nom');
                 let inProfessor = document.createElement('input');
                 inProfessor.type = 'hidden';
-                inProfessor.name = 'usuari';
+                inProfessor.name = 'professor';
                 inProfessor.value = usuari;
 
                 let br = document.createElement('br');

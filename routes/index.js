@@ -16,7 +16,8 @@ const schemaClasses = new Schema({
   duracio: String,
   columna: String,
   fila: String,
-  src: String
+  src: String,
+  alumnes: String
 });
 
 const schemaUsuaris = new Schema({
@@ -149,6 +150,119 @@ exports.retornaUsuaris = function (req, res) {
     });
 };
 
-// routes = require('express').Router();
+exports.crearClasse = function (req, res) {
+  const baseURL = req.protocol + '://' + req.headers.host + '/';
+  const reqUrl = new URL(req.url, baseURL);
+  const novaClasse = new Classe({
+    professor: reqUrl.searchParams.get("professor"),
+    categoria: reqUrl.searchParams.get("categoria"),
+    descripcio: reqUrl.searchParams.get("descripcio"),
+    hora: reqUrl.searchParams.get("hora"),
+    duracio: reqUrl.searchParams.get("duracio"),
+    columna: reqUrl.searchParams.get("columna"),
+    fila: reqUrl.searchParams.get("fila"),
+    src: reqUrl.searchParams.get("src")
+  });
+  novaClasse.save()
+    .then(() => {
+      console.log("Classe creada");
+      Usuari.findOneAndUpdate(
+        { nom: reqUrl.searchParams.get("professor") },
+        { $inc: { tcoins: +2 } },
+        { new: true }
+      )
+        .then((usuariActualitzat) => {
+          console.log("Usuari actualitzat:", usuariActualitzat);
+        })
+        .catch(err => {
+          console.log(err);
+        }
+        );
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  res.redirect('/calendari');
+};
 
-// module.exports = routes;
+exports.modificarClasse = function (req, res) {
+  const baseURL = req.protocol + '://' + req.headers.host + '/';
+  const reqUrl = new URL(req.url, baseURL);
+  const id = reqUrl.searchParams.get("id");
+
+  idClasse = new mongoose.Types.ObjectId(id);
+
+  Classe.findOneAndUpdate(
+    { _id: idClasse },
+    { 
+      descripcio: reqUrl.searchParams.get("descripcio"),
+      hora: reqUrl.searchParams.get("hora"),
+      duracio: reqUrl.searchParams.get("duracio")
+    }, 
+    { new: true }
+  )
+    .then((classeActualizada) => {
+      console.log("Classe actualizada:", classeActualizada);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  res.redirect('/calendari');
+};
+
+exports.eliminarClasse = function (req, res) {
+  const baseURL = req.protocol + '://' + req.headers.host + '/';
+  const reqUrl = new URL(req.url, baseURL);
+  const id = reqUrl.searchParams.get("id");
+
+  idClasse = new mongoose.Types.ObjectId(id);
+
+  Classe.deleteOne({ _id: idClasse })
+    .then(() => {
+      console.log("Classe eliminada");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  res.redirect('/calendari');
+};
+
+exports.uneixClasse = function (req, res) {
+  const baseURL = req.protocol + '://' + req.headers.host + '/';
+  const reqUrl = new URL(req.url, baseURL);
+  const id = reqUrl.searchParams.get("id");
+
+  const idClasse = new mongoose.Types.ObjectId(id);
+
+  Usuari.findOneAndUpdate(
+    { nom: reqUrl.searchParams.get("nom"), tcoins: { $gte: 1 } },
+    { $inc: { tcoins: -1 } },
+    { new: true }
+  )
+    .then((usuariActualitzat) => {
+      console.log("Usuari actualitzat:", usuariActualitzat);
+      // if (tcoins <= 0) {
+      //   res.send("No tens prou tcoins per apuntar-te a aquesta classe." + "<br>" + "<a href='/calendari'>Torna al calendari</a>");
+      // }else{
+      Classe.findOneAndUpdate(
+        { _id: idClasse },
+        { alumnes: reqUrl.searchParams.get("nom") },
+        { new: true }
+      )
+        .then((classeActualizada) => {
+          console.log("Classe actualizada:", classeActualizada);
+          res.redirect('/calendari');
+        })
+        .catch(err => {
+          console.log(err);
+          res.send("No tens prou tcoins per apuntar-te a aquesta classe." + "<br>" + "<a href='/calendari'>Torna al calendari</a>");
+        });
+      // }
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/calendari');
+    });
+};

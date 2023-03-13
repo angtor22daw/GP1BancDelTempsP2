@@ -47,6 +47,14 @@ app.get('/classes', routes.retornaClasses);
 
 app.get('/usuaris',routes.retornaUsuaris);
 
+app.get('/crearClasse', routes.crearClasse);
+
+app.get('/modificarClasse', routes.modificarClasse);
+
+app.get('/eliminarClasse', routes.eliminarClasse);
+
+app.get('/uneixClasse', routes.uneixClasse);
+
 app.listen(3000, function () {
   console.log('Servidor escoltant port http://localhost:3000');
 });
