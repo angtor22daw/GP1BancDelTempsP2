@@ -11,20 +11,17 @@ body{
   z-index: 1;
   /* añadir borde derecho de color negro */
   border-right: 1px solid rgb(116, 101, 101);
-  background-color: #adc155;
+  /* background-color: #adc155; */
+
+  background-image: url("../imatges/madera.jpg");
+  background-repeat: no-repeat;
+  /* background-size: 90%;
+  background-size: 100% 97%;
+  background-position: center;
+  background-position-y: 5px;
+  background-position-x: -5px; */
 }
-#butLogOut{
-  display: block;
-  background-color: lightgray;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 12px;
-  border: 1px solid black;
-}
+
 #logo{
   display: block;
   margin-left: auto;
@@ -33,9 +30,21 @@ body{
   width: 50%;
 }
 h3{
+  width: 100px;
+  color: white;
+  /* background-color: wheat; */
+  /* gradient brown to light brown */
+  background: -webkit-linear-gradient(top, #53380e, #694611);
+
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  margin: 0 auto;
   margin-left: 10%;
   margin-top: 5%;
-  /* underline */
+  font-family: Arial;
+  /* border color black */
+  border: 1px solid #201606;
   text-decoration: underline;
 }
 .divCategories{
@@ -45,6 +54,10 @@ h3{
 }
 .divCategories label{
   margin-left: 5%;
+  font-family: Arial;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 .categories{
   position: relative;
@@ -63,22 +76,53 @@ hr{
   width: 100%;
   height: 50px;
   
-  margin-bottom: 3%;
   margin-left:5%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 85%;
   height: 50px;
 }
+#nom{
+  position: absolute;
+  /* align center */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
+  /* margin-left: 40%; */
+
+  font-family: Arial;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+
+}
+#butLogOut{
+  display: block;
+  width: 150px;
+  height: 35px;
+  margin-top: -10%;
+  border-radius: 3px;
+  /* margin-left: 10%; */
+  font-family: Arial;
+  background: -webkit-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  background: -moz-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  background: -ms-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  border: 1px solid #494646;
+  color: white;
+  text-shadow: 0 1px 0 #302e2e;
+}
+
+#butLogOut:hover{
+  background: -webkit-linear-gradient(top, #494646, #302e2e); 
+  background: -moz-linear-gradient(top, #494646, #302e2e); 
+  background: -ms-linear-gradient(top, #494646, #302e2e); 
+  border: 1px solid #494646;
+}
 #divTaula{
   position: absolute;
   top: 0;
   margin: 0;
   margin-left: 19.68%;
-  width: 79%;
+  width: 100%;
 }
 
 #titol{
@@ -127,18 +171,226 @@ canvas {
   z-index: 10;
 
 }
+
+.labDia{
+  display: block;
+  font-size: 1.9rem !important;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+  margin-top: 20%;
+  margin-bottom: 2%;
+
+  font-family: hand;
+  /* font size important */
+}
+#divGestio label{
+  font-family: 'hand';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+form label{
+  font-family: 'hand';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#divGestio label:first-child{
+  font-family: 'hand';
+  font-size: 1.5rem;
+}
+
 #divGestio{
   position: absolute;
   left: 35%;
-  top: 20%;
-  width: 500px;
-  height: 400px;
+  top: 10%;
+
+  width: 430px;
+  height: 600px;
   margin: 5px;
   padding: 5px;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  /* border: 1px solid black; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.5); */
   text-align: center;
-  background-color: white;
+  /* background-color: white; */
   z-index: 10;
+
+  background-image: url("../imatges/llibreta.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-size: 100% 97%;
+  background-position: center;
+  background-position-y: 5px;
+  background-position-x: -5px;
+  
+
+}
+
+.labDescripcioMod{
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #333;
+  
+  margin-bottom: 10%;
+}
+form textarea{
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  resize: none;
+
+  font-family: hand;
+  font-weight: bold;
+}
+form textarea:focus{
+  outline: none;
+  border-color: #4c51bf;
+  box-shadow: 0 0 0 0.2rem rgba(76, 81, 191, 0.25);
+}
+form input{
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  /* align center */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  /* line-height: 1.5; */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  font-family: hand;
+  font-weight: bold;
+}
+
+form input:focus{
+  outline: none;
+  border-color: #4c51bf;
+  box-shadow: 0 0 0 0.2rem rgba(76, 81, 191, 0.25);
+}
+
+/* Boton eliminar */
+.butEliminar{
+  width: 80px;
+  height: 35px;
+  border-radius: 3px;
+  margin-left: 5%;
+  margin-bottom: 6%;
+  font-family: Arial;
+  background: -webkit-linear-gradient(top, #DD4B39, #D14836); 
+  background: -moz-linear-gradient(top, #DD4B39, #D14836); 
+  background: -ms-linear-gradient(top, #DD4B39, #D14836); 
+  border: 1px solid #DD4B39;
+  color: white;
+  text-shadow: 0 1px 0 #C04131;
+}
+.butEliminar:hover{
+  background: -webkit-linear-gradient(top, #DD4B39, #C53727);
+  background: -moz-linear-gradient(top, #DD4B39, #C53727);
+  background: -ms-linear-gradient(top, #DD4B39, #C53727);
+  border: 1px solid #AF301F;
+}
+.butEliminar:active{
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.2);
+  background: -webkit-linear-gradient(top, #D74736, #AD2719);
+  background: -moz-linear-gradient(top, #D74736, #AD2719);
+  background: -ms-linear-gradient(top, #D74736, #AD2719);
+}
+/* Boton cancelar */
+.butCancelar{
+  width: 80px;
+  height: 35px;
+  border-radius: 3px;
+  /* margin-left: 10%; */
+  font-family: Arial;
+  background: -webkit-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  background: -moz-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  background: -ms-linear-gradient(top, #5f5b5b, #3d3a3a); 
+  border: 1px solid #494646;
+  color: white;
+  text-shadow: 0 1px 0 #302e2e;
+}
+
+.butCancelar:hover{
+  background: -webkit-linear-gradient(top, #494646, #302e2e); 
+  background: -moz-linear-gradient(top, #494646, #302e2e); 
+  background: -ms-linear-gradient(top, #494646, #302e2e); 
+  border: 1px solid #494646;
+}
+
+/* Boton modificar */
+
+.butModificar{
+  width: 80px;
+  height: 35px;
+  border-radius: 3px;
+  /* margin-left: 10%; */
+  font-family: Arial;
+  color: white;
+  border: 1px solid #FB8F3D; 
+  background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+  background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+  background: -ms-linear-gradient(top, #FDA251, #FB8F3D); 
+}
+
+.butModificar:hover{
+  border: 1px solid #EB5200;
+  background: -webkit-linear-gradient(top, #FD924C, #F9760B); 
+  background: -moz-linear-gradient(top, #FD924C, #F9760B); 
+  background: -ms-linear-gradient(top, #FD924C, #F9760B); 
+  box-shadow: 0 1px #EFEFEF;
+}
+
+.butModificar:active{
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Boton butUnirseClase lightgreen*/
+
+.butUnirseClase{
+  width: 120px;
+  height: 35px;
+  border-radius: 3px;
+  margin-left: 10%;
+  margin-top: 4%;
+  font-family: Arial;
+  color: white;
+  border: 1px solid #4CAF50;
+  background: -webkit-linear-gradient(top, #61b964, #4CAF50); 
+  background: -moz-linear-gradient(top, #4CAF50, #4CAF50); 
+  background: -ms-linear-gradient(top, #4CAF50, #4CAF50); 
+}
+
+.butUnirseClase:hover{
+  border: 1px solid #4CAF50;
+  background: -webkit-linear-gradient(top, #498e4b, #357c37); 
+  background: -moz-linear-gradient(top, #4CAF50, #4CAF50); 
+  background: -ms-linear-gradient(top, #4CAF50, #4CAF50); 
+  box-shadow: 0 1px #EFEFEF;
+}
+
+.butUnirseClase:active{
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* import local font */
+@font-face {
+  font-family: 'hand';
+  src: url('../fonts/hand/Please\ write\ me\ a\ song.ttf');
 }
