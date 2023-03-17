@@ -61,7 +61,7 @@ function load() {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //Crear header calendari
-    ctx.fillStyle = "#00774f";
+    ctx.fillStyle = "#3E3F41"; //4F3515
     ctx.fillRect(0, 0, 185, 50);
     ctx.fillRect(185, 0, 185, 50);
     ctx.fillRect(370, 0, 185, 50);
@@ -122,16 +122,16 @@ function load() {
             //color de las lineas negras
             ctx.strokeStyle = 'black';
             if (i > 3 & j > 2) {
-                ctx.fillStyle = "#57bd9e";
+                ctx.fillStyle = "#BDA479";
                 ctx.fillRect(0 + j * 151, 50 + i * 100, 151, 100);
 
             }
             else if (i > 4) {
-                ctx.fillStyle = "#57bd9e";
+                ctx.fillStyle = "#BDA479";
                 ctx.fillRect(0 + j * 151, 50 + i * 100, 151, 100);
             }
             else {
-                ctx.fillStyle = "#9ce9de";
+                ctx.fillStyle = "#E9E9D2";
                 ctx.fillRect(0 + j * 151, 50 + i * 100, 151, 100);
                 path = new Path2D();
                 path.rect(0 + j * 151, 50 + i * 100, 151, 100);

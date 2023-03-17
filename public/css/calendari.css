@@ -1,8 +1,10 @@
 body{
-  background-color: #bdfa9c;
+  background: rgb(233,233,210,1);
+  /* background: linear-gradient(180deg, rgba(79,53,21,1), rgba(233,233,210,1)); */
+
 }
 #leftMenu {
-  position: fixed;
+  position: absolute;
   display: block;
   top: 0;
   left: 0;
@@ -130,7 +132,7 @@ hr{
   height: 50px;
   width: 100%;
   /* display: inline-block; */
-  background-color: #adc155;
+  background-color: #4F3515; /* #3E3F41 */
 }
 #mesAny{
   top: 0;
@@ -140,7 +142,7 @@ hr{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #adc155;
+  background-color: #4F3515;
 }
 /* #escalable{
   top: 0;
