@@ -5,6 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const routes = require('./routes');
+
+const https = require('https');
+const fs = require('fs');
+
+const serverSegur = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -55,8 +64,11 @@ app.get('/eliminarClasse', routes.eliminarClasse);
 
 app.get('/uneixClasse', routes.uneixClasse);
 
-app.listen(3000, function () {
-  console.log('Servidor escoltant port http://localhost:3000');
+// app.listen(3000, function () {
+//   console.log('Servidor escoltant port http://localhost:3000');
+// });
+const server = https.createServer(serverSegur, app).listen(443, () => {
+  console.log('Servidor HTTPS iniciado en el puerto 443');
 });
 
 // catch 404 and forward to error handler
@@ -74,5 +86,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+// server.listen();
 
 module.exports = app;

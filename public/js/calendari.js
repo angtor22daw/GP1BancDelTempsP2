@@ -730,13 +730,13 @@ function load() {
                 inSrc.name = 'src';
                 inSrc.value = imatge1.getFigura;
                 let categorialabel;
-                if (imatge1.getFigura == 'http://localhost:3000/imatges/encarrec.png') {
+                if (imatge1.getFigura == 'https://localhost/imatges/encarrec.png') {
                     categorialabel = "Encàrrec";
-                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/esports.png') {
+                } else if (imatge1.getFigura == 'https://localhost/imatges/esports.png') {
                     categorialabel = "Esports";
-                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/idiomes.png') {
+                } else if (imatge1.getFigura == 'https://localhost/imatges/idiomes.png') {
                     categorialabel = "Idiomes";
-                } else if (imatge1.getFigura == 'http://localhost:3000/imatges/musica.png') {
+                } else if (imatge1.getFigura == 'https://localhost/imatges/musica.png') {
                     categorialabel = "Música";
                 }
                 let inCategoria = document.createElement('input');

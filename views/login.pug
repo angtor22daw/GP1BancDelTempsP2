@@ -6,6 +6,8 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/css/login.css')
     title Login Banc del Temps
+    script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js")
+    link(rel="stylesheet", href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css")
   body
     .encabezado
       img(src='./imatges/logo.png', alt='logo', width='120', height='120')
@@ -18,4 +20,7 @@ html(lang='en')
       input(type='password', name='password', required='')
       button#submitBtn(type='button', onclick='formSubmit()') Iniciar sessi&oacute;
       a(href='registrarse') Registrarse
+    h1 Geolocalizació
+    button#butMapa Mostrar la meva ubicació
+    div#map
     script(src='/js/login.js')
