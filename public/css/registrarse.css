@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: green;
+    background-color: #927231;
 }
 .titol{
     margin-left: 33%;
@@ -32,7 +32,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 input[type=submit] {
-    background-color: #4CAF50;
+    background-color: #525c52;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -42,6 +42,7 @@ input[type=submit] {
 }
 input[type=submit]:hover {
     opacity: 0.8;
+    background-color: #ac8b1f;
 }
 .cancelbtn {
     width: auto;
